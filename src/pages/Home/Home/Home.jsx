@@ -6,6 +6,7 @@ import BenefitCards from './Benefits/BenefitCard';
 import BeMerchant from './BeMerchant/BeMerchant';
 import WorkCard from './Work/WorkCard';
 import CustomerCard from './customers/CustomerCard';
+import Frequently from './Frequently/Frequently';
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
           <BenefitCards></BenefitCards>
           <BeMerchant></BeMerchant>
        <CustomerCard></CustomerCard>
+       <Frequently></Frequently>
         </div>
     );
 };
