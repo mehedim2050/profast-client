@@ -33,7 +33,7 @@ const Frequently = () => {
                 <div className="collapse-title font-semibold text-black bg-white">Does it really help with back pain and posture improvement?</div>
                 <div className="collapse-content text-sm bg-emerald-500">Yes, many programs and products do help with back pain and posture. However, effectiveness depends on proper use and individual needs.</div>
             </div>
-           <div className="flex justify-center mt-20">
+           <div className="flex justify-center mt-10">
   <button className="btn btn-primary rounded-2xl text-black">
     See More FAQ’s
   </button>
