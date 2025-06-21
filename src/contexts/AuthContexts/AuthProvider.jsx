@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import AuthContexts from './AuthContexts';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../../firebase/firebase.init'
+import { 
+    createUserWithEmailAndPassword, 
+    signInWithEmailAndPassword, 
+    signOut, 
+    onAuthStateChanged, 
+    GoogleAuthProvider,
+    signInWithPopup 
+} from 'firebase/auth';
+import { auth } from '../../firebase/firebase.init';
+
+const googleProvider = new GoogleAuthProvider(); // ✅ Fixed typo
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -15,6 +24,11 @@ const AuthProvider = ({ children }) => {
     const signIn = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
+    };
+
+    const signInWithGoogle = () => {
+        setLoading(true);
+        return signInWithPopup(auth, googleProvider); // ✅ Corrected function
     };
 
     const logOut = () => {
@@ -36,7 +50,8 @@ const AuthProvider = ({ children }) => {
         loading,
         createUser,
         signIn,
-        logOut
+        logOut,
+        signInWithGoogle,
     };
 
     return (
